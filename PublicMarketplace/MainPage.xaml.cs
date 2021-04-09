@@ -25,6 +25,7 @@ namespace PublicMarketplace
         public MainPage()
         {
             this.InitializeComponent();
+            //Started project
         }
     }
 }
