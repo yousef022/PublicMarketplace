@@ -9,6 +9,56 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <TextBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"></TextBox>
+        <ComboBox Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"></ComboBox>
+        <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="20"></Image>
+        <TextBlock x:Name="TxtPrice" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtQuantityAvailable" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtCondition" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <TextBlock x:Name="Shipping" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtDateListed" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtReturns" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+
+        <TextBlock x:Name="TxtDescription" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="5"></TextBlock>
+
+        <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="6" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="30" HorizontalAlignment="Stretch" Margin="20">
+            <Button FontSize="36" Content="Buy" HorizontalAlignment="Stretch" Click="OnBuy"></Button>
+            <ComboBox FontSize="36"  HorizontalAlignment="Stretch"></ComboBox>
+            <Button FontSize="36" Content="Price Match" HorizontalAlignment="Stretch" Click="OnPriceMatch"></Button>
+            <Button FontSize="36" Content="Contact seller" HorizontalAlignment="Stretch"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="30" Spacing="30">
+            <Button Content="Search" FontSize="24"></Button>
+            <Button Content="Sell an item" FontSize="24"></Button>
+        </StackPanel>
     </Grid>
 </Page>

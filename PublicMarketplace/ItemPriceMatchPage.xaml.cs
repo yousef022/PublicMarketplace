@@ -20,21 +20,11 @@ namespace PublicMarketplace
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class ItemDisplayPage : Page
+	public sealed partial class ItemPriceMatchPage : Page
 	{
-		public ItemDisplayPage()
+		public ItemPriceMatchPage()
 		{
 			this.InitializeComponent();
-		}
-
-		private void OnBuy(object sender, RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(ItemPurchasePage));
-		}
-
-		private void OnPriceMatch(object sender, RoutedEventArgs e)
-		{
-			Frame.Navigate(typeof(ItemPriceMatchPage));
 		}
 	}
 }
