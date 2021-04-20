@@ -18,7 +18,7 @@ namespace MarketplaceLogicLibrary
 		/// <param name="productName"></param>
 		/// <param name="productPrice"></param>
 		/// <param name="productDescription"></param>
-		public MarketPlace(string productCode, string productName, double productPrice, string productDescription) : base( productCode, productName, productPrice)
+		public MarketPlace(string productCode, string productName, double productPrice, string productDescription, Departments productDepartment) : base( productCode, productName, productPrice, productDepartment)
 		{
 			ProductDescription = productDescription;
 		}

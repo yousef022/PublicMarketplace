@@ -41,14 +41,8 @@ namespace MarketplaceLogicLibrary
 		/// <returns>null</returns>
 		public Products GetByCode(string productCode)
 		{
-			foreach (Products pc in _products)
-			{
-				if (pc.ProductCode == productCode)
-				{
-					return pc;
-				}
-			}
-			return null;
+			Products matchingProd = Products.Find(x => x.ProductCode == productCode) as Products;
+			return matchingProd;
 		}
 
 

@@ -12,6 +12,8 @@ namespace MarketplaceLogicLibrary
 		private string _productCode;
 		private string _productName;
 		private double _productPrice;
+		private Departments _productDepartment;
+		private int _productStock;
 
 		/// <summary>
 		/// Initializes a new instance of Products class with the specified values
@@ -19,11 +21,13 @@ namespace MarketplaceLogicLibrary
 		/// <param name="productCode">Product code, unique identifier</param>
 		/// <param name="productName">Name of product</param>
 		/// <param name="productPrice">Price of product</param>
-		public Products(string productCode, string productName, double productPrice)
+		public Products(string productCode, string productName, double productPrice, Departments productDepartment,int stock)
 		{
 			ProductCode = _productCode;
 			ProductName = _productName;
 			ProductPrice = _productPrice;
+			ProductDepartment = _productDepartment;
+			ProductStock = _productStock;
 		}
 
 		/// <summary>
@@ -42,6 +46,7 @@ namespace MarketplaceLogicLibrary
 			{
 				if (string.IsNullOrEmpty(value))
 					throw new Exception("Name of product cannot be blank");
+				_productName = value;
 			}
 		}
 
@@ -55,8 +60,25 @@ namespace MarketplaceLogicLibrary
 			{
 				if (value < 0)
 					throw new Exception("Product price cannot be less than zero");
+				_productPrice = value;
 			}
 		}
 
+		public Departments ProductDepartment
+        {
+			get => _productDepartment;
+			set => _productDepartment = value;
+        }
+
+		public int ProductStock
+        {
+			get => _productStock;
+            set
+            {
+				if (value < 1)
+					throw new Exception("Product stock cannot be less than 1");
+				_productStock = value;
+            }
+        }
 	}
 }

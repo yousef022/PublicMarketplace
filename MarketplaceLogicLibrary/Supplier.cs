@@ -4,13 +4,11 @@ using System.Text;
 
 namespace MarketplaceLogicLibrary
 {
-	public class Supplier
+	public class Supplier : User
 	{
 		/// <summary>
 		/// Attributes of Supplier class
 		/// </summary>
-		private string _name;
-		private string _emailAddress;
 		private string _location;
 
 		/// <summary>
@@ -18,38 +16,9 @@ namespace MarketplaceLogicLibrary
 		/// </summary>
 		/// <param name="name"></param>
 		/// <param name="emailAddress"></param>
-		public Supplier(string name, string emailAddress)
+		public Supplier(string name, string emailAddress, string location) : base(name, emailAddress)
 		{
-			Name = name;
-			EmailAddress = emailAddress;
-		}
-
-		/// <summary>
-		/// Name of supplier
-		/// </summary>
-		public string Name
-		{
-			get => _name;
-			set
-			{
-				if (string.IsNullOrEmpty(value))
-					throw new Exception("Name cannot be empty");
-				_name = value;
-			}
-		}
-
-		/// <summary>
-		/// Email address of supplier
-		/// </summary>
-		public string EmailAddress
-		{
-			get => _emailAddress;
-			set
-			{
-				if (string.IsNullOrEmpty(value))
-					throw new Exception("Email address cannot be empty");
-				_emailAddress = value;
-			}
+			Location = location;
 		}
 
 		/// <summary>
