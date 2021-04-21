@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MarketplaceLogicLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +24,9 @@ namespace PublicMarketplace
 	/// </summary>
 	public sealed partial class HomePage : Page
 	{
+		private UserCollection _users = new UserCollection();
+		private JsonUserDataManager _dataManager = new JsonUserDataManager(ApplicationData.Current.LocalFolder.Path + @"\users.json");
+		
 		public HomePage()
 		{
 			this.InitializeComponent();
