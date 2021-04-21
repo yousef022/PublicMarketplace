@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarketplaceLogicLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,31 @@ namespace PublicMarketplace
 	/// </summary>
 	public sealed partial class ItemDisplayPage : Page
 	{
+		private Products _selectedProduct;
+		private Supplier _selectedSupplier;
+		public Products SelectedProduct
+        {
+			get => _selectedProduct;
+			set
+			{
+				if (value != _selectedProduct)
+				{
+					value = _selectedProduct;
+				}
+			}
+		}
+		public Supplier SelectedSupplier
+        {
+			get => _selectedSupplier;
+            set
+            {
+				if (value != _selectedSupplier)
+                {
+					value = _selectedSupplier;
+                }
+            }
+        }
+
 		public ItemDisplayPage()
 		{
 			this.InitializeComponent();
@@ -29,12 +55,17 @@ namespace PublicMarketplace
 
 		private void OnBuy(object sender, RoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(ItemPurchasePage));
+			Frame.Navigate(typeof(ItemPurchasePage), SelectedProduct);
 		}
 
 		private void OnPriceMatch(object sender, RoutedEventArgs e)
 		{
 			Frame.Navigate(typeof(ItemPriceMatchPage));
 		}
-	}
+
+        private void onContactSeller(object sender, RoutedEventArgs e)
+        {
+			Frame.Navigate(typeof(), SelectedSupplier);
+        }
+    }
 }
