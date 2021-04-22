@@ -50,7 +50,11 @@ namespace PublicMarketplace
 			this.InitializeComponent();
 			CmbBx_Departments.ItemsSource = Enum.GetValues(typeof(Departments));
 		}
-
+		/// <summary>
+		/// [Hanin] 
+		/// </summary>
+		/// <param name="product"></param>
+		/// <param name="amount"></param>
 		public void Purchase(Products product, int amount)
 		{
 			if (ProdRep.GetByCode(product.ProductCode) != null)
@@ -58,10 +62,14 @@ namespace PublicMarketplace
 					throw new Exception("Amount selected exceeds item stock.");
 				product.ProductStock -= amount;
 		}
-
+		/// <summary>
+		/// [Hanin]
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void onBuyItem(object sender, RoutedEventArgs e)
         {
-			//Purchase(SelectedProduct, amount);
+			Purchase(SelectedProduct, amount);
         }
 
 

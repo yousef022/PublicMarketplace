@@ -31,16 +31,21 @@
             <Image x:Name="Img_Purchase" Width="450" Height="400" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
             <TextBlock x:Name="TxtBlck_Total" Grid.Row="1" Grid.ColumnSpan="2"  Text="Total" FontSize="25" HorizontalAlignment="Center"/>
         </StackPanel>
-        <Border Background="LightGray" BorderThickness="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="2" Height="450" Width="450" Margin="150,64,150,375">
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Spacing="20">
-                <TextBlock x:Name="TxtBlck_Price" HorizontalAlignment="Center" Text="Price: " FontSize="25" Margin="25"/>
-                <TextBlock x:Name="TxtBlck_Tax" HorizontalAlignment="Center" Text="Tax: " FontSize="25"/>
-                <TextBlock x:Name="TxtBlck_Shipping" HorizontalAlignment="Center" Text="Shipping: " FontSize="25"/>
-                <TextBlock Text="-----------------------" HorizontalAlignment="Center" FontSize="25"/>
-                <TextBlock x:Name="TxtBlck_TotalCost" HorizontalAlignment="Center" Text="Total Cost: " FontSize="25"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+            <Border Background="LightGray" BorderThickness="5" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="2" Height="450" Width="450" Margin="40">
+                <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Spacing="20">
+                    <TextBlock x:Name="TxtBlck_Price" HorizontalAlignment="Center" Text="Price: " FontSize="25" Margin="25"/>
+                    <TextBlock x:Name="TxtBlck_Tax" HorizontalAlignment="Center" Text="Tax: " FontSize="25"/>
+                    <TextBlock x:Name="TxtBlck_Shipping" HorizontalAlignment="Center" Text="Shipping: " FontSize="25"/>
+                    <TextBlock Text="-----------------------" HorizontalAlignment="Center" FontSize="25"/>
+                    <TextBlock x:Name="TxtBlck_TotalCost" HorizontalAlignment="Center" Text="Total Cost: " FontSize="25"/>
+                </StackPanel>
+            </Border>
+            <StackPanel Spacing="10" HorizontalAlignment="Center">
+                <TextBox x:Name="TxtBx_Amount" PlaceholderText="Enter Amount to Purchase" FontSize="25"/>
+                <Button x:Name="Btn_Buy" Content="Buy Item" FontSize="25" VerticalAlignment="Top" Width="450" Click="onBuyItem" />
             </StackPanel>
-
-        </Border>
-        <Button x:Name="Btn_Buy" Content="Buy Item" FontSize="25" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="2" Margin="150,525,0,0" VerticalAlignment="Top" Width="450" Click="onBuyItem" />
+        </StackPanel>
+        
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarketplaceLogicLibrary;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,32 +28,8 @@ namespace PublicMarketplace
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class HomePage : Page, INotifyPropertyChanged
+	public sealed partial class HomePage : Page
 	{
-		private MarketPlace _selectedProduct;
-		public event PropertyChangedEventHandler PropertyChanged;
-		public MarketPlace SelectedProduct
-		{
-			get => _selectedProduct;
-			set
-			{
-				if (value != _selectedProduct)
-				{
-					_selectedProduct = value;
-					OnPropertyChanged();
-				}
-			}
-
-		}
-
-		private ObservableCollection<MarketPlace> _products = new ObservableCollection<MarketPlace>()
-		{
-			new MarketPlace("P001", "bike", 200, "test", Departments.Sports, 10),
-			new MarketPlace("P002", "switch", 499, "test", Departments.Electronics, 10),
-			new MarketPlace("P003", "ps5", 499, "test", Departments.Electronics, 10),
-			new MarketPlace("P004", "xboxSeriesX", 499, "test", Departments.Electronics, 10),
-			new MarketPlace("P005", "lawnMower", 150, "test", Departments.HomeAppliances, 10)
-		};
 		public HomePage()
 		{
 			this.InitializeComponent();

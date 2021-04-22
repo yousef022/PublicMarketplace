@@ -54,7 +54,7 @@
             <Button FontSize="36" Content="Buy" HorizontalAlignment="Stretch" Click="OnBuy"></Button>
             <ComboBox FontSize="36"  HorizontalAlignment="Stretch"></ComboBox>
             <Button FontSize="36" Content="Price Match" HorizontalAlignment="Stretch" Click="OnPriceMatch"></Button>
-            <Button FontSize="36" Content="Contact seller" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="Btn_Contact" FontSize="36" Content="Contact seller" HorizontalAlignment="Stretch" Click="onContactSeller"></Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="30" Spacing="30">
             <Button Content="Search" FontSize="24"></Button>
