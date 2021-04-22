@@ -5,6 +5,7 @@
     xmlns:local="using:PublicMarketplace"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:marketplaceLogicLibrary="using:MarketplaceLogicLibrary"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -31,18 +32,28 @@
 
         <Image Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Margin="30"></Image>
 
-        <Image Grid.Row="2" Grid.Column="1" Margin="20"></Image>
-        <Image Grid.Row="2" Grid.Column="2" Margin="20"></Image>
-        <Image Grid.Row="2" Grid.Column="3" Margin="20"></Image>
-        <Image Grid.Row="2" Grid.Column="4" Margin="20"></Image>
-        <Image Grid.Row="4" Grid.Column="1" Margin="20"></Image>
-        <Image Grid.Row="4" Grid.Column="2" Margin="20"></Image>
-        <Image Grid.Row="4" Grid.Column="3" Margin="20"></Image>
-        <Image Grid.Row="4" Grid.Column="4" Margin="20"></Image>
 
         <StackPanel Grid.Column="5" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
             <Button Content="Search" FontSize="20"></Button>
             <Button Content="Sell an item" FontSize="20"></Button>
         </StackPanel>
+
+        <GridView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="6" Margin="10" Grid.RowSpan="4" ItemsSource="{x:Bind _products}" SelectedItem="{x:Bind SelectedProduct, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="marketplaceLogicLibrary:MarketPlace">
+                    
+
+                        <Image Source="{x:Bind ProductIcon}" Height="250" Width="250" Stretch="UniformToFill" Margin="100"/>
+                        
+                  
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+
     </Grid>
 </Page>

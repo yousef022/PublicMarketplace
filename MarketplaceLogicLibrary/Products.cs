@@ -21,19 +21,22 @@ namespace MarketplaceLogicLibrary
 		/// <param name="productCode">Product code, unique identifier</param>
 		/// <param name="productName">Name of product</param>
 		/// <param name="productPrice">Price of product</param>
-		public Products(string productCode, string productName, double productPrice, Departments productDepartment,int stock)
+		/// <param name="productDepartment"></param>
+		/// <param name="stock"></param>
+		public Products(string productCode, string productName, double productPrice, Departments productDepartment,int productStock)
 		{
-			ProductCode = _productCode;
-			ProductName = _productName;
-			ProductPrice = _productPrice;
-			ProductDepartment = _productDepartment;
-			ProductStock = _productStock;
+			ProductCode = productCode;
+			ProductName = productName;
+			ProductPrice = productPrice;
+			ProductDepartment = productDepartment;
+			ProductStock = productStock;
+			
 		}
 
 		/// <summary>
 		/// Product code, unique identifier
 		/// </summary>
-		public string ProductCode
+		public  string ProductCode
 		{ get => _productCode; set => _productCode = value; }
 
 		/// <summary>

@@ -10,6 +10,7 @@ namespace MarketplaceLogicLibrary
 		/// Attributes of MarketPlace class
 		/// </summary>
 		private string _productDescription;
+		
 
 		/// <summary>
 		/// Initializes a new instance of MarketPlace class with the specified values
@@ -18,7 +19,7 @@ namespace MarketplaceLogicLibrary
 		/// <param name="productName"></param>
 		/// <param name="productPrice"></param>
 		/// <param name="productDescription"></param>
-		public MarketPlace(string productCode, string productName, double productPrice, string productDescription, Departments productDepartment) : base( productCode, productName, productPrice, productDepartment)
+		public MarketPlace(string productCode, string productName, double productPrice, string productDescription, Departments productDepartment, int productStock) : base( productCode, productName, productPrice, productDepartment, productStock)
 		{
 			ProductDescription = productDescription;
 		}
@@ -36,5 +37,8 @@ namespace MarketplaceLogicLibrary
 				_productDescription = value;
 			}
 		}
+
+		//Computed property
+		public string ProductIcon => $"ms-appx:///Assets/Images/{ProductName}.png";
 	}
 }
