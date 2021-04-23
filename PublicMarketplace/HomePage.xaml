@@ -29,8 +29,8 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="40"></TextBox>
-
-        <Image Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Margin="30"></Image>
+        
+        <TextBlock FontSize="60" FontWeight="Bold" Foreground="SaddleBrown" Text="Today's featured products" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Margin="30"></TextBlock>
 
 
         <StackPanel Grid.Column="5" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
@@ -41,11 +41,15 @@
         <GridView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="6" Margin="10" Grid.RowSpan="4" ItemsSource="{x:Bind _products}" SelectedItem="{x:Bind SelectedProduct, Mode=TwoWay}">
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="marketplaceLogicLibrary:MarketPlace">
-                    
+                    <Grid>
 
-                        <Image Source="{x:Bind ProductIcon}" Height="250" Width="250" Stretch="UniformToFill" Margin="100"/>
-                        
-                  
+                        <Border BorderThickness="5" BorderBrush="#FF000000">
+                            <Image Source="{x:Bind ProductIcon}" Height="250" Width="250" Stretch="UniformToFill" Margin="100" Tapped="OnTappedRequest"/>
+                        </Border>
+                        <TextBlock Text="{x:Bind ProductName}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"></TextBlock>
+
+                    </Grid>
+
                 </DataTemplate>
             </GridView.ItemTemplate>
             <GridView.ItemsPanel>

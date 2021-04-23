@@ -69,7 +69,7 @@ namespace PublicMarketplace
 		/// <param name="e"></param>
         private void onBuyItem(object sender, RoutedEventArgs e)
         {
-			Purchase(SelectedProduct, amount);
+			//Purchase(SelectedProduct, amount);
         }
 
 

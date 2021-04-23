@@ -28,23 +28,55 @@ namespace PublicMarketplace
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class HomePage : Page
+	public sealed partial class HomePage : Page, INotifyPropertyChanged
 	{
+		public MarketPlace _selectedProduct;
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		public MarketPlace SelectedProduct
+		{
+			get => _selectedProduct;
+			set
+			{
+				if (value != _selectedProduct)
+				{
+					_selectedProduct = value;
+					OnPropertyChanged();
+				}
+			}
+		}
 		public HomePage()
 		{
 			this.InitializeComponent();
 		}
 
-		
 
+		private ObservableCollection<MarketPlace> _products = new ObservableCollection<MarketPlace>()
+		{
+			new MarketPlace("P001", "Bike", 200, "test", "New" ,Departments.Sports, 10, "bike.png", true, 0, new DateTime(2021,2,12)),
+			new MarketPlace("P002", "Xbox Series X", 499, "test", "New" ,Departments.Electronics, 4,"xboxSeriesX.png", false, 20, new DateTime(2021, 2, 12)),
+			new MarketPlace("P003", "PlayStation 5", 499, "test", "New" ,Departments.Electronics, 2, "ps5.png", false, 20, new DateTime(2021,3,14)),
+			new MarketPlace("P004", "Nintendo Switch", 499, "test", "New" ,Departments.Electronics, 5, "switch.png", false, 20, new DateTime(2021, 2, 12)),
+			new MarketPlace("P005", "Lawn Mower", 150, "test", "Used" ,Departments.HomeAppliances, 1, "lawnMower.png", true, 0, new DateTime(2020, 5,16)),
+			new MarketPlace("P006", "Hockey Stick", 50, "test","Used" ,Departments.Sports, 9, "hockeyStick.png", true, 0, new DateTime(2019, 2, 20)),
+			new MarketPlace("P007", "Basket Ball", 25, "test","New" ,Departments.Sports, 10,"basketball.png", true, 10, new DateTime(2021,4,23)),
+			new MarketPlace("P008", "Blender", 100, "test", "New" ,Departments.HomeAppliances, 10, "blender.png", true, 22, new DateTime(2021,1,17)),
+		};
+
+		[NotifyPropertyChangedInvocator]
 		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 
-		private void UIElement_OnTapped(object sender, TappedRoutedEventArgs e)
+		private void OnTappedRequest(object sender, TappedRoutedEventArgs e)
 		{
-			Frame.Navigate(typeof(ItemDisplayPage));
+			List<string> productDetails = new List<string>() { SelectedProduct.ProductCode, SelectedProduct.ProductName, SelectedProduct.ProductPrice.ToString(), SelectedProduct.ProductDescription, SelectedProduct.ProductDepartment.ToString(), SelectedProduct.ProductStock.ToString(), SelectedProduct.Condition, SelectedProduct.ImageFilePath, SelectedProduct.Returns.ToString(), SelectedProduct.Shipping.ToString(), SelectedProduct.DateListed.ToString()};
+			Frame.Navigate(typeof(ItemDisplayPage), productDetails);
 		}
+
+		
+
+		
 	}
 }

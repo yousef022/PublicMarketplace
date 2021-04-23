@@ -25,7 +25,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -40,16 +40,27 @@
 
         <TextBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"></TextBox>
         <ComboBox Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Stretch"></ComboBox>
-        <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="20"></Image>
-        <TextBlock x:Name="TxtPrice" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" Margin="20"></TextBlock>
-        <TextBlock x:Name="TxtQuantityAvailable" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" Margin="20"></TextBlock>
-        <TextBlock x:Name="TxtCondition" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2" Margin="20"></TextBlock>
-        <TextBlock x:Name="Shipping" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2" Margin="20"></TextBlock>
-        <TextBlock x:Name="TxtDateListed" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2" Margin="20"></TextBlock>
-        <TextBlock x:Name="TxtReturns" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="2" Margin="20"></TextBlock>
+        <Border Background="LightGray" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="8">
+            <TextBlock x:Name="TxtName"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="Aqua" ></TextBlock>
+            </Border>
+        <Image x:Name="ImgProductImage" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="6" Margin="20"></Image>
 
-        <TextBlock x:Name="TxtDescription" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="5"></TextBlock>
+        <TextBlock Text="Price" FontSize="19" FontWeight="Bold"  Grid.Column="0" Grid.Row="9" Margin="20"></TextBlock>
+        <TextBlock Text="Quantity available" FontSize="19" FontWeight="Bold" Grid.Column="0" Grid.Row="10" Margin="20,20,6,20"></TextBlock>
+        <TextBlock Text="Condition" FontSize="19" FontWeight="Bold" Grid.Column="0" Grid.Row="11" Margin="20"></TextBlock>
+        <TextBlock Text="Shipping" FontSize="19" FontWeight="Bold" Grid.Column="0" Grid.Row="12" Margin="20,20,20,13"></TextBlock>
+        <TextBlock Text="Date listed" FontSize="19" FontWeight="Bold" Grid.Column="0" Grid.Row="13" Margin="20"></TextBlock>
+        <TextBlock Text="Returns" FontSize="19" FontWeight="Bold" Grid.Column="0" Grid.Row="14" Margin="20"></TextBlock>
 
+        <TextBlock x:Name="TxtPrice" Grid.Column="1" Grid.Row="9" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtQuantityAvailable" Grid.Column="1" Grid.Row="10"   Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtCondition" Grid.Column="1" Grid.Row="11"  Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtShipping" Grid.Column="1" Grid.Row="12" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtDateListed" Grid.Column="1" Grid.Row="13"  Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtReturns" Grid.Column="1" Grid.Row="14"  Margin="20"></TextBlock>
+        <Border BorderThickness="2" BorderBrush="#FF000000" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="5" Margin="20">
+            <TextBlock x:Name="TxtDescription" Margin="20" ></TextBlock>
+        </Border>
         <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="6" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="30" HorizontalAlignment="Stretch" Margin="20">
             <Button FontSize="36" Content="Buy" HorizontalAlignment="Stretch" Click="OnBuy"></Button>
             <ComboBox FontSize="36"  HorizontalAlignment="Stretch"></ComboBox>
@@ -60,5 +71,6 @@
             <Button Content="Search" FontSize="24"></Button>
             <Button Content="Sell an item" FontSize="24"></Button>
         </StackPanel>
+        <Button Grid.Row="0" Content="Back" FontSize="24" HorizontalAlignment="Center" Height="44" Width="132"  Click="OnBackRequested"/>
     </Grid>
 </Page>

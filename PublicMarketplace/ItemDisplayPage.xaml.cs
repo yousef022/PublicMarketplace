@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -25,6 +26,25 @@ namespace PublicMarketplace
 	{
 		private Products _selectedProduct;
 		private Supplier _selectedSupplier;
+
+		protected override void OnNavigatedTo(NavigationEventArgs e)
+		{
+			base.OnNavigatedTo(e);
+			List<string> productDetails = e.Parameter as List<string>;
+			if (productDetails != null)
+			{
+				TxtName.Text = productDetails[1];
+				TxtPrice.Text = productDetails[2];
+				TxtDescription.Text = productDetails[3];
+				TxtCondition.Text = productDetails[6];
+				ImgProductImage.Source = new BitmapImage(new Uri($"ms-appx:///Assets/Images/{productDetails[7]}"));
+				TxtQuantityAvailable.Text = productDetails[5];
+				TxtReturns.Text = productDetails[8];
+				TxtShipping.Text = productDetails[9];
+				TxtDateListed.Text = productDetails[10];
+			}
+		}
+
 		public Products SelectedProduct
         {
 			get => _selectedProduct;
@@ -65,7 +85,13 @@ namespace PublicMarketplace
 
         private void onContactSeller(object sender, RoutedEventArgs e)
         {
-			Frame.Navigate(typeof(), SelectedSupplier);
+			//Frame.Navigate(typeof(), SelectedSupplier);
         }
-    }
+
+		private void OnBackRequested(object sender, RoutedEventArgs e)
+		{
+			if(Frame.CanGoBack)
+				Frame.GoBack();
+		}
+	}
 }
