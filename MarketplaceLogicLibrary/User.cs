@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace MarketplaceLogicLibrary
@@ -11,6 +12,7 @@ namespace MarketplaceLogicLibrary
 		/// </summary>
 		private string _name;
 		private string _emailAddress;
+		private Dictionary<string, string> _receivedMessages;
 
 		/// <summary>
 		/// Initializes a new instance of User class with the specified values
@@ -50,6 +52,15 @@ namespace MarketplaceLogicLibrary
 				_emailAddress = value;
 			}
 		}
+		/// <summary>
+		/// [Hanin] Method that adds a message to the dictionary of messages a user receives
+		/// </summary>
+		/// <param name="sender">name of user who sent the message</param>
+		/// <param name="message">the message being sent</param>
+		public void AddReceivedMessage (string sender, string message)
+        {
+			_receivedMessages.Add(sender, message);
+        }
 
 		/*public virtual string Register(string name, string email, string userName, string password)
 		{

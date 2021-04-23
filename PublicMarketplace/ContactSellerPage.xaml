@@ -21,10 +21,12 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Grid.ColumnSpan="4" Spacing="10">
-            <TextBlock x:Name="TxtBlck_SellerInfo" Grid.Column="0" Grid.ColumnSpan="2" Text="Seller Info" FontSize="25"/>
+        <StackPanel Orientation="Vertical" Grid.ColumnSpan="4" Grid.RowSpan="4" Spacing="10" Margin="15">
+            <TextBlock x:Name="TxtBlck_SellerInfo" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Bind SelectedSupplier}" FontSize="25"/>
             <TextBox x:Name="TxtBx_Message" PlaceholderText="Enter Message" Height="Auto" FontSize="25"/>
-            <TextBox x:Name="TxtBx_CustName" PlaceholderText="Enter Name" FontSize="25"/>
+            <TextBox x:Name="TxtBx_SenderName" PlaceholderText="Enter Name" FontSize="25"/>
+            <Button x:Name="Btn_Send" Content="Send" Style="{StaticResource GeneralButtonStyle}" HorizontalAlignment="Center" Click="onSend"/>
+            <Button x:Name="Btn_Back" Content="Back" Style="{StaticResource GeneralButtonStyle}" HorizontalAlignment="Center" Click="onBack"/>
         </StackPanel>
     </Grid>
 </Page>
