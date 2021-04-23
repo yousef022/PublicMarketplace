@@ -6,6 +6,9 @@ using System.Text;
 
 namespace MarketplaceLogicLibrary
 {
+    /// <summary>
+    /// [Hanin] class that manages data saved about users
+    /// </summary>
     public class JsonUserDataManager : IUserDataManager
     {
         private string _dataFilePath;
