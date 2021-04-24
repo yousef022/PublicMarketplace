@@ -151,7 +151,10 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\basketball.png" />
     <Content Include="Assets\Images\bike.png" />
+    <Content Include="Assets\Images\blender.png" />
+    <Content Include="Assets\Images\hockeyStick.png" />
     <Content Include="Assets\Images\lawnMower.png" />
     <Content Include="Assets\Images\ps5.png" />
     <Content Include="Assets\Images\switch.png" />
