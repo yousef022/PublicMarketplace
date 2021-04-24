@@ -46,6 +46,7 @@
                 <Button x:Name="Btn_Buy" Content="Buy Item" FontSize="25" VerticalAlignment="Top" Width="450" Click="onBuyItem" />
             </StackPanel>
         </StackPanel>
-        
+        <Button x:Name="Btn_Back" Content="Back" Style="{StaticResource GeneralButtonStyle}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="4" Margin="20" Click="onBack"/>
+
     </Grid>
 </Page>

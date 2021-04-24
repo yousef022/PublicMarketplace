@@ -51,7 +51,7 @@ namespace PublicMarketplace
 			CmbBx_Departments.ItemsSource = Enum.GetValues(typeof(Departments));
 		}
 		/// <summary>
-		/// [Hanin] 
+		/// [Hanin] Allows purchasing of items
 		/// </summary>
 		/// <param name="product"></param>
 		/// <param name="amount"></param>
@@ -63,15 +63,20 @@ namespace PublicMarketplace
 				product.ProductStock -= amount;
 		}
 		/// <summary>
-		/// [Hanin]
+		/// [Hanin] Purchases when user clicks on Buy Item button
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
         private void onBuyItem(object sender, RoutedEventArgs e)
         {
+			int amount = int.Parse(TxtBx_Amount.Text);
 			Purchase(SelectedProduct, amount);
         }
 
-
+        private void onBack(object sender, RoutedEventArgs e)
+        {
+			if (Frame.CanGoBack)
+				Frame.GoBack();
+        }
     }
 }

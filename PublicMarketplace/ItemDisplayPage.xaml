@@ -52,7 +52,7 @@
 
         <StackPanel Grid.Row="3" Grid.Column="4" Grid.RowSpan="6" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="30" HorizontalAlignment="Stretch" Margin="20">
             <Button FontSize="36" Content="Buy" HorizontalAlignment="Stretch" Click="OnBuy"></Button>
-            <ComboBox FontSize="36"  HorizontalAlignment="Stretch"></ComboBox>
+            <TextBox x:Name="TxtBx_Amount" FontSize="36"  HorizontalAlignment="Stretch"></TextBox>
             <Button FontSize="36" Content="Price Match" HorizontalAlignment="Stretch" Click="OnPriceMatch"></Button>
             <Button x:Name="Btn_Contact" FontSize="36" Content="Contact seller" HorizontalAlignment="Stretch" Click="onContactSeller"></Button>
         </StackPanel>
