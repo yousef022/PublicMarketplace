@@ -9,6 +9,64 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="ImgPreviewImage" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="20"></Image>
+
+        <Button Content="Upload an image" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="20,0,20,0" Height="43" Click="OnUpload"/>
+        <Button Content="Back" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Click="OnBackRequested"></Button>
+
+        <TextBlock FontSize="19" FontWeight="Bold" Text="Item name" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock FontSize="19" FontWeight="Bold" Text="Item price" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock FontSize="19" FontWeight="Bold" Text="Condition" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock FontSize="19" FontWeight="Bold" Text="Shipping" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+        <TextBox x:Name="TxtNameInput" Grid.Row="2" Grid.Column="4" Margin="20"></TextBox>
+        <TextBox x:Name="TxtPriceInput" Grid.Row="3" Grid.Column="4" Margin="20"></TextBox>
+        <ComboBox x:Name="CmbCondition" Grid.Row="4" Grid.Column="4" Margin="20"></ComboBox>
+        <ComboBox x:Name="CmbShipping" Grid.Row="5" Grid.Column="4" Margin="20"></ComboBox>
+        <TextBox x:Name="TxtDescriptionInput" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="5" Header="Product Description"></TextBox>
+        
+
+        <TextBlock Grid.Column="1" Grid.Row="8" Margin="20"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="9" Margin="20"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="10" Margin="20"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="11" Margin="20"></TextBlock>
+        
+
+        <TextBlock x:Name="TxtName" FontSize="19" FontWeight="Bold" HorizontalAlignment="Center" Margin="20" Grid.Row="8" Text="Name" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="TxtPrice" FontSize="19" FontWeight="Bold" HorizontalAlignment="Center" Margin="20" Grid.Row="9" Grid.Column="0" Text="Price" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalTextAlignment="Center"></TextBlock>
+        <TextBlock x:Name="TxtCondition" FontSize="19" FontWeight="Bold" Text="Condition" Grid.Column="0" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalTextAlignment="Center" Margin="20"></TextBlock>
+        <TextBlock x:Name="TxtShipping" FontSize="19" FontWeight="Bold" Text="Shipping" Grid.Column="0" Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalTextAlignment="Center" Margin="20"></TextBlock>
+
+
 
     </Grid>
 </Page>

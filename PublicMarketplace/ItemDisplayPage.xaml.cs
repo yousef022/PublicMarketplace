@@ -87,5 +87,11 @@ namespace PublicMarketplace
         {
 			Frame.Navigate(typeof(ContactSellerPage), SelectedSupplier);
         }
-    }
+
+		private void OnBackRequested(object sender, RoutedEventArgs e)
+		{
+			if (Frame.CanGoBack)
+				Frame.GoBack();
+		}
+	}
 }

@@ -35,7 +35,7 @@
 
         <StackPanel Grid.Column="5" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="15">
             <Button Content="Search" FontSize="20"></Button>
-            <Button Content="Sell an item" FontSize="20"></Button>
+            <Button Content="Sell an item" FontSize="20" Click="OnSellRequest"></Button>
         </StackPanel>
 
         <GridView Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="6" Margin="10" Grid.RowSpan="4" ItemsSource="{x:Bind _products}" SelectedItem="{x:Bind SelectedProduct, Mode=TwoWay}">
